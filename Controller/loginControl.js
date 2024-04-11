@@ -2,7 +2,7 @@ import { User } from "../Models/userModel.js"
 import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
-import { transport } from "../nodemailer.js"
+import { transport } from "../nodeMailer.js"
 
 dotenv.config()
 
