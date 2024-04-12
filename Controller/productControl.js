@@ -84,7 +84,7 @@ export const editProduct = async (req, res) => {
             image,
             rate,
             stock } = req.body
-        const updatedData = await Customer.findByIdAndUpdate(id, {
+        const updatedData = await Product.findByIdAndUpdate(id, {
             ProductName,
             category,
             image,
