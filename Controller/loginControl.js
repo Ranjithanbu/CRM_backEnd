@@ -69,7 +69,7 @@ export const resetAuth = async (req, res) => {
             from: process.env.emailId,
             to: checkEmail.email,
             subject: 'Reset password',
-            text: `http://localhost:5173/resetPassword/${checkEmail._id}/${validToken}`
+            text: `https://mycrmplus.netlify.app/resetPassword/${checkEmail._id}/${validToken}`
         }
         if (checkEmail) {
             const info = await transport.sendMail(mailOption, (err) => {
