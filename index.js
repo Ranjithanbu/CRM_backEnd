@@ -19,7 +19,11 @@ app.use(Express.json())
 connectDb()
 //allow to acces public folder
 app.use(Express.static('public'))
+//checking does url working or not
+app.get("/",(req,res)=>{
 
+    res.status(200).json({message:'site is working'})
+})
 app.use('/api',userRouter)
 app.use('/lead',leadRoute)
 app.use('/customer',customerRoute)
