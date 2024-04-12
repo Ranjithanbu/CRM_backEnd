@@ -1,5 +1,5 @@
 import { MailDB } from "../Models/mailModel.js"
-import { transport } from "../nodemailer.js"
+import { transport } from "../nodeMailer.js"
 
 //sending mail  and store to db
 
