@@ -141,6 +141,8 @@ const userData=await Lead.aggregate([
     assign:`${userName}`
 }}
    ])
+
+  
 res.status(200).json({message:'leads fetched successfully',data:userData})
     } catch (error) {
       res.status(500).json({message:error.message})  
