@@ -85,7 +85,6 @@ const userData=new User({
 })
 
 const savedData=await userData.save()
-const{password,...rest}=savedData
 const token=await jwt.sign({_id:savedData._id},process.env.JWT_KEY)
 res.status(200).cookie('token',token,{
   httpOnly:true,
@@ -93,7 +92,13 @@ res.status(200).cookie('token',token,{
             expires:new Date(Date.now()+24*60*60*1000),
             secure:true
 
-}).json({message:'signIn success',data:rest})
+}).json({message:'signIn success',data:{
+  userName:savedData.userName,
+  email:savedData.email,
+  role:savedData.role,
+  image:savedData.image,
+  _id:savedData._id
+}})
 }
 
   } catch (error) {
